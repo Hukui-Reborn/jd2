@@ -1,0 +1,14 @@
+<div>
+    <%= link_to("Add a Job", new_admin_product_path) %>
+    <hr>
+</div>
+<div>
+<% @products.each do |product| %>
+<li>
+    <%= link_to(product.title, admin_product_path(product)) %> |
+    <%= link_to("Edit",edit_admin_product_path(product)) %> |
+    <%= link_to("destroy", admin_product_path(product), method: :delete, data: {confirm: "你确定？"}) %>
+</li>
+
+<% end %>
+</div>

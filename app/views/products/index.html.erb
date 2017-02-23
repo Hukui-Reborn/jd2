@@ -1,0 +1,18 @@
+<h1> 所有商品 </h1>
+<table class="table table-bordered">
+    <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td>
+            <%= link_to(product.title, product_path(product)) %>
+          </td>
+          <td>
+            <%= product.quantity %>
+          </td>
+          <td>
+            <%= product.price %>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
